@@ -1,3 +1,5 @@
+# cleans weekly data from online (https://www.fantasyfootballdatapros.com/csv_files)
+
 import pandas as pd
 import csv
 
@@ -23,7 +25,7 @@ for file in files:
       team = stats["Tm"][i]
 
       fantasypoints = 0
-      # negative stats
+      # negative stats (fumbles and interceptions)
       fantasypoints -= (stats["FL"][i] * 2)
       fantasypoints -= (stats["Int"][i] * 2)
       # positive stats

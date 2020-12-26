@@ -1,3 +1,5 @@
+# cleans weekly data from online (https://www.fantasyfootballdatapros.com/csv_files)
+
 import pandas as pd
 import csv
 

@@ -1,3 +1,5 @@
+# cleans ranking data from online (https://www.fantasypros.com/nfl/points-allowed.php?year=2018)
+
 import pandas as pd
 import csv
 

@@ -2,12 +2,15 @@ import pandas as pd
 import csv
 from yearlydata import *
 
+# read and import all csv files using pandas
 yearlystats = pd.read_csv("yearlydata/2019.csv")
 weeks = ["weeklydata/2019/week1.csv", "weeklydata/2019/week2.csv", "weeklydata/2019/week3.csv", "weeklydata/2019/week4.csv", "weeklydata/2019/week5.csv", "weeklydata/2019/week6.csv", "weeklydata/2019/week7.csv", "weeklydata/2019/week8.csv", "weeklydata/2019/week9.csv", "weeklydata/2019/week10.csv", "weeklydata/2019/week11.csv", "weeklydata/2019/week12.csv", "weeklydata/2019/week13.csv", "weeklydata/2019/week14.csv", "weeklydata/2019/week15.csv", "weeklydata/2019/week16.csv", "weeklydata/2019/week17.csv"]
 
 playerprofiles = []
 
+# iterate through every player that scored that year
 for i in range(len(yearlystats)): 
+  # pull player name and yearly average from that file
   playername = yearlystats["Player Name"][i]
   yearlyaverage = yearlystats["Average Fantasy Points"][i]
 
@@ -16,11 +19,13 @@ for i in range(len(yearlystats)):
   xdata = []
   ydata = []
 
+  # iterate through every weekly data file to find weeks where the selected player scored points
   for file in range(len(weeks)):
     with open(weeks[file], "r") as f:
       reader = csv.reader(f)
       weeklystats = pd.read_csv(f)
 
+      # calculate their +/- from their yearly average and pull the opposing team's rank
       for k in range(len(weeklystats)):
         if playername == weeklystats["Player Name"][k]:
           points = yearlyaverage - (weeklystats["Total Fantasy Points"][k])
@@ -32,6 +37,7 @@ for i in range(len(yearlystats)):
           profile.append(round(points, 2))
           profile.append(oppteam)
   
+  # find the correlation between opposing team rank and fantasy +/-
   x = pd.Series(xdata)
   y = pd.Series(ydata)
   correlation = x.corr(y)
@@ -39,6 +45,7 @@ for i in range(len(yearlystats)):
   profile.insert(1, round(correlation, 2))
   playerprofiles.append(profile)
 
+  # create new file with the correlation coefficient and the data from all the games they played (game number does not mean week number)
   with open("correlations/2019correlations.csv", "w") as f:
     writer = csv.writer(f)
 
