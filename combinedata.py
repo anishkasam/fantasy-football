@@ -1,10 +1,10 @@
 import pandas as pd
 import csv
 
-rankings = pd.read_csv("2019rankings.csv")
-schedule = pd.read_csv("2019schedule.csv")
-yearlystats = pd.read_csv("2019.csv")
-weeks = ["2019/week1.csv", "2019/week2.csv", "2019/week3.csv", "2019/week4.csv", "2019/week5.csv", "2019/week6.csv", "2019/week7.csv", "2019/week8.csv", "2019/week9.csv", "2019/week10.csv", "2019/week11.csv", "2019/week12.csv", "2019/week13.csv", "2019/week14.csv", "2019/week15.csv", "2019/week16.csv", "2019/week17.csv"]
+rankings = pd.read_csv("rankings/2019rankings.csv")
+schedule = pd.read_csv("schedules/2019schedule.csv")
+yearlystats = pd.read_csv("yearlydata/2019.csv")
+weeks = ["weeklydata/2019/week1.csv", "weeklydata/2019/week2.csv", "weeklydata/2019/week3.csv", "weeklydata/2019/week4.csv", "weeklydata/2019/week5.csv", "weeklydata/2019/week6.csv", "weeklydata/2019/week7.csv", "weeklydata/2019/week8.csv", "weeklydata/2019/week9.csv", "weeklydata/2019/week10.csv", "weeklydata/2019/week11.csv", "weeklydata/2019/week12.csv", "weeklydata/2019/week13.csv", "weeklydata/2019/week14.csv", "weeklydata/2019/week15.csv", "weeklydata/2019/week16.csv", "weeklydata/2019/week17.csv"]
 
 for file in range(len(weeks)):
   playerprofiles = []
