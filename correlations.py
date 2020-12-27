@@ -2,8 +2,8 @@ import pandas as pd
 import csv
 
 # read and import all csv files using pandas
-yearlystats = pd.read_csv("yearlydata/2017.csv")
-weeks = ["weeklydata/2017/week1.csv", "weeklydata/2017/week2.csv", "weeklydata/2017/week3.csv", "weeklydata/2017/week4.csv", "weeklydata/2017/week5.csv", "weeklydata/2017/week6.csv", "weeklydata/2017/week7.csv", "weeklydata/2017/week8.csv", "weeklydata/2017/week9.csv", "weeklydata/2017/week10.csv", "weeklydata/2017/week11.csv", "weeklydata/2017/week12.csv", "weeklydata/2017/week13.csv", "weeklydata/2017/week14.csv", "weeklydata/2017/week15.csv", "weeklydata/2017/week16.csv", "weeklydata/2017/week17.csv"]
+yearlystats = pd.read_csv("yearlydata/2019.csv")
+weeks = ["weeklydata/2019/week1.csv", "weeklydata/2019/week2.csv", "weeklydata/2019/week3.csv", "weeklydata/2019/week4.csv", "weeklydata/2019/week5.csv", "weeklydata/2019/week6.csv", "weeklydata/2019/week7.csv", "weeklydata/2019/week8.csv", "weeklydata/2019/week9.csv", "weeklydata/2019/week10.csv", "weeklydata/2019/week11.csv", "weeklydata/2019/week12.csv", "weeklydata/2019/week13.csv", "weeklydata/2019/week14.csv", "weeklydata/2019/week15.csv", "weeklydata/2019/week16.csv", "weeklydata/2019/week17.csv"]
 
 playerprofiles = []
 
@@ -46,7 +46,7 @@ for i in range(len(yearlystats)):
   playerprofiles.append(profile)
 
   # create new file with the correlation coefficient and the data from all the games they played (game number does not mean week number)
-  with open("correlations/2017correlations.csv", "w") as f:
+  with open("correlations/2019correlations.csv", "w") as f:
     writer = csv.writer(f)
 
     headers = ["Player Name", "Games Played", "Correlation", "G1P", "G1DR", "G2P", "G2DR", "G3P", "G3DR", "G4P", "G4DR", "G5P", "G5DR", "G6P", "G6DR", "G7P", "G7DR", "G8P", "G8DR", "G9P", "G9DR", "G10P", "G10DR", "G11P", "G11DR", "G12P", "G12DR", "G13P", "G13DR", "G14P", "G14DR", "G15P", "G15DR", "G16P", "G16DR", "G17P", "G17DR"]

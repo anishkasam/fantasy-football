@@ -17,7 +17,7 @@ with open(file, "r") as f:
 
     if teamname == "Arizona Cardinals":
       teamname = "ARI"
-    elif teamname == "anta Falcons":
+    elif teamname == "Atlanta Falcons":
       teamname = "ATL"
     elif teamname == "Baltimore Ravens":
       teamname = "BAL"

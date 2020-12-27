@@ -16,6 +16,7 @@ flatlinex = np.array(flatline)
 with open("correlations/2017correlations.csv", "r") as f:
   # loop through every player in the file
   for i in range(len(corr2017)):
+    playername = corr2017["Player Name"][i]
     correlation = corr2017["Correlation"][i]
     gamesplayed = corr2017["Games Played"][i]
 
@@ -24,7 +25,7 @@ with open("correlations/2017correlations.csv", "r") as f:
     ydata = []
 
     # if the relationship is strong, the player has played more than half the season, and the player is a top 200 player
-    if abs(correlation) > 0.6 and gamesplayed > 8 and i < 200:
+    if (abs(correlation) > 0.6 and gamesplayed > 8 and i < 200) or playername == "Todd Gurley":
       playername = corr2017["Player Name"][i]
 
       # iterate through every game (16 max) to copy player stats
@@ -55,13 +56,14 @@ with open("correlations/2017correlations.csv", "r") as f:
 # repeat same process above for 2018 correlations
 with open("correlations/2018correlations.csv", "r") as f:
   for i in range(len(corr2018)):
+    playername = corr2018["Player Name"][i]
     correlation = corr2018["Correlation"][i]
     gamesplayed = corr2018["Games Played"][i]
 
     xdata = []
     ydata = []
 
-    if abs(correlation) > 0.6 and gamesplayed > 8 and i < 200:
+    if (abs(correlation) > 0.6 and gamesplayed > 8 and i < 200) or playername == "Todd Gurley":
       playername = corr2018["Player Name"][i]
 
       for k in range(1, 16):
@@ -88,13 +90,14 @@ with open("correlations/2018correlations.csv", "r") as f:
 # repeat same process above for 2019 correlations
 with open("correlations/2019correlations.csv", "r") as f:
   for i in range(len(corr2019)):
+    playername = corr2019["Player Name"][i]
     correlation = corr2019["Correlation"][i]
     gamesplayed = corr2019["Games Played"][i]
 
     xdata = []
     ydata = []
 
-    if abs(correlation) > 0.6 and gamesplayed > 8 and i < 200:
+    if (abs(correlation) > 0.6 and gamesplayed > 8 and i < 200) or playername == "Christian McCaffrey":
       playername = corr2019["Player Name"][i]
 
       for k in range(1, 16):
