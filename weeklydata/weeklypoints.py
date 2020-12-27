@@ -25,7 +25,7 @@ for file in files:
       team = stats["Tm"][i]
 
       fantasypoints = 0
-      # negative stats (fumbles and interceptions)
+      # negative stats
       fantasypoints -= (stats["FL"][i] * 2)
       fantasypoints -= (stats["Int"][i] * 2)
       # positive stats

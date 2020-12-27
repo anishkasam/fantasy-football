@@ -12,7 +12,6 @@ for file in range(len(weeks)):
   playerprofiles = []
 
   with open(weeks[file], "r") as f:
-    reader = csv.reader(f)
     weeklystats = pd.read_csv(f)
 
     # iterate through every line in each weekly data file

@@ -14,8 +14,6 @@ flatlinex = np.array(flatline)
 
 # open the 2017 correlations file
 with open("correlations/2017correlations.csv", "r") as f:
-  reader = csv.reader(f)
-
   # loop through every player in the file
   for i in range(len(corr2017)):
     correlation = corr2017["Correlation"][i]
@@ -56,8 +54,6 @@ with open("correlations/2017correlations.csv", "r") as f:
 
 # repeat same process above for 2018 correlations
 with open("correlations/2018correlations.csv", "r") as f:
-  reader = csv.reader(f)
-
   for i in range(len(corr2018)):
     correlation = corr2018["Correlation"][i]
     gamesplayed = corr2018["Games Played"][i]
@@ -91,8 +87,6 @@ with open("correlations/2018correlations.csv", "r") as f:
 
 # repeat same process above for 2019 correlations
 with open("correlations/2019correlations.csv", "r") as f:
-  reader = csv.reader(f)
-
   for i in range(len(corr2019)):
     correlation = corr2019["Correlation"][i]
     gamesplayed = corr2019["Games Played"][i]

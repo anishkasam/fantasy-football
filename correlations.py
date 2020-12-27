@@ -22,7 +22,6 @@ for i in range(len(yearlystats)):
   # iterate through every weekly data file to find weeks where the selected player scored points
   for file in range(len(weeks)):
     with open(weeks[file], "r") as f:
-      reader = csv.reader(f)
       weeklystats = pd.read_csv(f)
 
       # calculate their +/- from their yearly average and pull the opposing team's rank

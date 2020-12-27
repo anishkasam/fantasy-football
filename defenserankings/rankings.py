@@ -4,7 +4,6 @@ import pandas as pd
 import csv
 
 file = "2019rankings.csv"
-
 rankings = pd.read_csv(file)
 
 teamprofiles = []
